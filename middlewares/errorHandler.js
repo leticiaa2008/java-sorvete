@@ -1,11 +1,10 @@
 const errorHandler = (err, req, res, next) => {
-    console.error("Erro:", err.message);
-
+    console.error(`Erro detectado: ${err.message}`);
     res.status(500).json({
         sucesso: false,
-        mensagem: "Erro interno no servidor.",
-        detalhe: err.message
+        mensagem: "Ocorreu um erro interno no servidor.",
+        detalhe:err.message
     });
 };
 
-module.exports = errorHandler;
+module.exports = errorHandlerMiddleware;

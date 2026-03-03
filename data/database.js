@@ -1,35 +1,32 @@
 let categorias = [
-    { id: 1, nome: "Tradicionais" },
-    { id: 2, nome: "Premium" },
-    { id: 3, nome: "Zero Açúcar" },
-    { id: 4, nome: "Bebidas Geladas" }
+    {id: 1, nome: "Sushis"},
+    {id: 2, nome: "Temakis"},
+    {id: 3, nome: "Bebidas"},
+    {id: 4, nome: "Sobremesas"}
 ];
 
 let produtos = [
     {
-        id: 1,
         categoriaId: 1,
-        nome: "Sorvete de Chocolate",
-        descricao: "Sorvete cremoso feito com cacau selecionado.",
-        preco: 12.00,
-        imagem: "https://blog.gsuplementos.com.br/wp-content/uploads/2020/11/iStock-1173381958.jpg"
+        nome: "Combinado Sushi",
+        descricao: "seleção especial de sushis frescos e variados, perfeita para saborear ou compartilhar.",
+        preco: 99.00,
+        imagem: "https://anota.ai/bloganotaai/wp-content/uploads/sites/5/2020/08/Equipamentos-Para-Fazer-Sushi-1.jpg"
     },
-    {
-        id: 2,
+ {
         categoriaId: 2,
-        nome: "Sorvete de Pistache Premium",
-        descricao: "Feito com pistache importado e textura super cremosa.",
-        preco: 18.00,
-        imagem: "https://minhasreceitinhas.com.br/wp-content/uploads/2023/03/Sorvete-de-pistache-1-1200x739.png"
+        nome: "Temaki Filadélfia",
+        descricao: "alga crocante recheada com salmão fresco, cream cheese e arroz temperado, combinação clássica e irresistível.",
+        imagem: "https://www.sabornamesa.com.br/media/k2/items/cache/c1034feeb8e544b33d1fc604d40ae043_XL.jpg"
     },
-    {
-        id: 3,
-        categoriaId: 4,
-        nome: "Milkshake de Morango",
-        descricao: "Milkshake gelado feito com sorvete artesanal.",
-        preco: 16.00,
-        imagem: "https://assets.haribo.com/image/upload/s--ik3BnJWt--/ar_1:1,c_fill,f_auto/w_555/v1/consumer-sites/pt-br/Recipes/Milkshake-de-morango-banner.png"
+  {
+        categoriaId: 3,
+        nome: "Refrigerante",
+        descricao: "bebida gelada e refrescante, perfeita para acompanhar seu pedido.",
+        preco: 8.00,
+        imagem: "https://adegabomretiro.com.br/wp-content/uploads/2019/10/366-700x850.jpg"
     }
-];
 
+    
+];
 module.exports = { categorias, produtos };
