@@ -31,7 +31,7 @@ let produtos = [
         nome: 'Sorvete de Chocolate (2 bolas)',
         descricao: 'Sorvete cremoso de chocolate servido no copo.',
         preco: 12.90,
-        imagem: 'sorvete-chocolate.png'
+        imagem: 'https://thumbs.dreamstime.com/b/duas-bolas-congeladas-de-sorvete-chocolate-em-um-disco-fechado-contra-fundo-branco-porcelana-se-aproximam-173073503.jpg'
     },
     {
         id: 2,
@@ -39,7 +39,7 @@ let produtos = [
         nome: 'Casquinha Baunilha',
         descricao: 'Clássica casquinha com sorvete sabor baunilha.',
         preco: 7.50,
-        imagem: 'casquinha-baunilha.png'
+        imagem: 'https://api-middleware-mcd.mcdonaldscupones.com/media/image/product$kpXnFFzy/200/200/original?country=br'
     },
     {
         id: 3,
@@ -47,7 +47,7 @@ let produtos = [
         nome: 'Milkshake de Morango',
         descricao: 'Milkshake cremoso feito com sorvete de morango.',
         preco: 15.90,
-        imagem: 'milkshake-morango.png'
+        imagem: 'https://guiadacozinha.com.br/wp-content/uploads/2015/01/milk-shake-caseiro-1.jpg'
     },
     {
         id: 4,
@@ -55,7 +55,7 @@ let produtos = [
         nome: 'Refrigerante Lata',
         descricao: 'Refrigerante gelado em lata 350ml.',
         preco: 6.00,
-        imagem: 'refrigerante.png'
+        imagem: 'https://conteudo.imguol.com.br/c/entretenimento/34/2018/02/26/refrigerante-1519671522034_v2_450x450.jpg'
     }
 ];
 
