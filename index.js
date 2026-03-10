@@ -4,35 +4,35 @@ const app = express();
 app.use(express.json());
 
 let produtos = [
-    // --- SUSHIS ---
-    { id: 1, nome: "Combinado Sushi", preco: 99.00, categoria: "Sushis" },
-    { id: 2, nome: "Combinado Sushi Premium", preco: 115.00, categoria: "Sushis" },
-    { id: 3, nome: "Combinado Hot", preco: 99.00, categoria: "Sushis" },
-    { id: 4, nome: "Combinado Hot Premium", preco: 120.00, categoria: "Sushis" },
-    { id: 5, nome: "Niguiri Variado (10 un)", preco: 45.00, categoria: "Sushis" },
-    { id: 6, nome: "Sashimi Variado (12 un)", preco: 55.00, categoria: "Sushis" },
+    // --- SORVETES ---
+    { id: 1, nome: "Sorvete de Chocolate (2 bolas)", preco: 12.00, categoria: "Sorvetes" },
+    { id: 2, nome: "Sorvete de Morango (2 bolas)", preco: 12.00, categoria: "Sorvetes" },
+    { id: 3, nome: "Sorvete de Baunilha (2 bolas)", preco: 11.00, categoria: "Sorvetes" },
+    { id: 4, nome: "Sorvete Napolitano", preco: 14.00, categoria: "Sorvetes" },
+    { id: 5, nome: "Sorvete de Cookies & Cream", preco: 15.00, categoria: "Sorvetes" },
+    { id: 6, nome: "Sorvete de Pistache", preco: 16.00, categoria: "Sorvetes" },
 
-    // --- TEMAKIS ---
-    { id: 7, nome: "Temaki Filadélfia", preco: 28.00, categoria: "Temakis" },
-    { id: 8, nome: "Temaki Salmão", preco: 25.00, categoria: "Temakis" },
-    { id: 9, nome: "Temaki Camarão", preco: 32.00, categoria: "Temakis" },
-    { id: 10, nome: "Temaki Hot", preco: 30.00, categoria: "Temakis" },
-    { id: 11, nome: "Temaki Atum", preco: 26.00, categoria: "Temakis" },
+    // --- CASQUINHAS ---
+    { id: 7, nome: "Casquinha Chocolate", preco: 7.00, categoria: "Casquinhas" },
+    { id: 8, nome: "Casquinha Baunilha", preco: 7.00, categoria: "Casquinhas" },
+    { id: 9, nome: "Casquinha Mista", preco: 8.00, categoria: "Casquinhas" },
+    { id: 10, nome: "Casquinha Morango", preco: 7.50, categoria: "Casquinhas" },
+    { id: 11, nome: "Casquinha Pistache", preco: 9.00, categoria: "Casquinhas" },
 
-    // --- BEBIDAS ---
-    { id: 12, nome: "Refrigerante", preco: 8.00, categoria: "Bebidas" },
-    { id: 13, nome: "Água Mineral", preco: 4.00, categoria: "Bebidas" },
-    { id: 14, nome: "Cerveja Heineken", preco: 14.00, categoria: "Bebidas" },
-    { id: 15, nome: "Suco Natural", preco: 12.00, categoria: "Bebidas" },
-    { id: 16, nome: "Sakê Quente", preco: 18.00, categoria: "Bebidas" },
-    { id: 17, nome: "Chá Verde", preco: 7.00, categoria: "Bebidas" },
+    // --- MILKSHAKES ---
+    { id: 12, nome: "Milkshake de Chocolate", preco: 18.00, categoria: "Milkshakes" },
+    { id: 13, nome: "Milkshake de Morango", preco: 18.00, categoria: "Milkshakes" },
+    { id: 14, nome: "Milkshake de Baunilha", preco: 17.00, categoria: "Milkshakes" },
+    { id: 15, nome: "Milkshake de Oreo", preco: 20.00, categoria: "Milkshakes" },
+    { id: 16, nome: "Milkshake de Nutella", preco: 22.00, categoria: "Milkshakes" },
+    { id: 17, nome: "Milkshake de Doce de Leite", preco: 19.00, categoria: "Milkshakes" },
 
     // --- SOBREMESAS ---
-    { id: 18, nome: "Mochi de Morango", preco: 12.00, categoria: "Sobremesas" },
-    { id: 19, nome: "Mochi de Matchá", preco: 12.00, categoria: "Sobremesas" },
-    { id: 20, nome: "Dorayaki", preco: 10.00, categoria: "Sobremesas" },
-    { id: 21, nome: "Sorvete de Matchá", preco: 15.00, categoria: "Sobremesas" },
-    { id: 22, nome: "Tempura de Banana", preco: 14.00, categoria: "Sobremesas" }
+    { id: 18, nome: "Banana Split", preco: 20.00, categoria: "Sobremesas" },
+    { id: 19, nome: "Taça de Sorvete Especial", preco: 22.00, categoria: "Sobremesas" },
+    { id: 20, nome: "Brownie com Sorvete", preco: 18.00, categoria: "Sobremesas" },
+    { id: 21, nome: "Petit Gateau com Sorvete", preco: 25.00, categoria: "Sobremesas" },
+    { id: 22, nome: "Açaí com Sorvete", preco: 19.00, categoria: "Sobremesas" }
 ];
 
 // 1. Rota para listar todos os produtos
@@ -40,14 +40,13 @@ app.get('/produtos', (req, res) => {
     res.json(produtos);
 });
 
-// 2. Rota consertada: Listar apenas as categorias (sem repetir nomes)
+// 2. Rota para listar categorias sem repetir
 app.get('/categoria', (req, res) => {
-    // Extrai todas as categorias e usa o Set para remover as duplicadas
     const categoriasUnicas = [...new Set(produtos.map(p => p.categoria))];
     res.json(categoriasUnicas);
 });
 
-// 3. Rota para buscar produtos der uma categoria específica
+// 3. Rota para buscar produtos de uma categoria específica
 app.get('/produtos/categoria/:nomeCategoria', (req, res) => {
     const { nomeCategoria } = req.params;
     const produtosFiltrados = produtos.filter(
@@ -65,21 +64,23 @@ app.post('/produtos', (req, res) => {
     }
 
     const novoProduto = {
-        id: produtos.length > 0 ? produtos[produtos.length - 1].id + 1 : 1, 
+        id: produtos.length > 0 ? produtos[produtos.length - 1].id + 1 : 1,
         nome,
         preco,
         categoria
     };
+
     produtos.push(novoProduto);
     res.status(201).json(novoProduto);
 });
 
-// 5. Rota para atualizar um produto existente
+// 5. Rota para atualizar um produto
 app.put("/produtos/:id", (req, res) => {
     const { id } = req.params;
     const { nome, preco, categoria } = req.body;
+
     const produtoIndex = produtos.findIndex(p => p.id === parseInt(id));
-    
+
     if (produtoIndex !== -1) {
         produtos[produtoIndex] = { id: parseInt(id), nome, preco, categoria };
         res.json(produtos[produtoIndex]);
@@ -88,11 +89,12 @@ app.put("/produtos/:id", (req, res) => {
     }
 });
 
-// 6. Rota para deletar um produto  
+// 6. Rota para deletar um produto
 app.delete("/produtos/:id", (req, res) => {
     const { id } = req.params;
+
     const produtoIndex = produtos.findIndex(p => p.id === parseInt(id));
-    
+
     if (produtoIndex !== -1) {
         produtos.splice(produtoIndex, 1);
         res.status(204).send();
